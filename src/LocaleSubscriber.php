@@ -16,7 +16,6 @@ class LocaleSubscriber implements EventSubscriberInterface
             return;
         }
 
-        // Check for locale in session and set it for the current request
         $locale = $request->getSession()->get('_locale', 'en');
         $request->setLocale($locale);
     }
