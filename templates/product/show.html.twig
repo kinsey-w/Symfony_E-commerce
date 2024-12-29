@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ product.nom }}
+{% endblock %}
+
+{% block body %}
+<h1>{{ product.nom }}</h1>
+
+<div class="product-page">
+    <!-- Left Section: Photo and Description -->
+    <div class="product-left">
+        {% if product.photo %}
+            <img src="{{ product.photo }}" alt="{{ product.nom }}">
+        {% else %}
+            <p>{{ 'show.no_image'|trans }}</p>
+        {% endif %}
+        <p>{{ product.description }}</p>
+    </div>
+
+    <!-- Right Section: Details, Add to Cart, Admin Actions -->
+    <div class="product-right">
+        <p><strong>{{ 'show.price'|trans }}</strong> {{ product.prix }} €</p>
+        {% if product.stock > 0 %}
+            <p><strong>{{ 'show.stock'|trans }}</strong> {{ product.stock }}</p>
+        {% else %}
+            <p class="out-of-stock"><strong>{{ 'show.out_of_stock'|trans }}</strong></p>
+        {% endif %}
+        <p><strong>{{ 'show.category'|trans }}</strong> 
+            {% if product.category is not null %}
+                {{ product.category.name }}
+            {% else %}
+                {{ 'show.no_category'|trans }}
+            {% endif %}
+        </p>
+
+        <div class="product-actions">
+            {% if product.stock > 0 and app.user %}
+                <form method="post" action="{{ path('cart_add', { id: product.id }) }}" class="no-style-form">
+                    <label for="quantity">{{ 'show.quantity'|trans }}</label>
+                    <input id="quantity" type="number" name="quantity" value="1" min="1" max="{{ product.stock }}">
+                    <button type="submit" class="btn">{{ 'show.add_to_cart'|trans }}</button>
+                </form>
+            {% elseif product.stock > 0 %}
+                <p><a href="{{ path('app_login') }}">{{ 'show.login_to_purchase'|trans }}</a></p>
+            {% else %}
+                <p class="out-of-stock-message">{{ 'show.unavailable'|trans }}</p>
+            {% endif %}
+
+            {% if is_granted('ROLE_ADMIN') %}
+                <div class="admin-actions">
+                    <a href="{{ path('product_edit', { id: product.id }) }}">{{ 'show.edit_product'|trans }}</a>
+                    <form method="post" action="{{ path('product_delete', { id: product.id }) }}" style="display: inline;" class="no-style-form">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ product.id) }}">
+                        <button type="submit" class="btn btn-danger">{{ 'show.delete_product'|trans }}</button>
+                    </form>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,225 @@
+register:
+    title: "S'inscrire"
+    heading: "Créer un compte"
+    label:
+        nom: "Nom"
+        prenom: "Prénom"
+        email: "Email"
+        password: "Mot de passe"
+    button:
+        submit: "S'inscrire"
+    existing_account: "Vous avez déjà un compte ?"
+    link:
+        login: "Connectez-vous ici"
+    error:
+        last_name_not_blank: "Le nom ne peut pas être vide."
+        last_name_length: "Le nom ne peut pas dépasser 255 caractères."
+        first_name_not_blank: "Le prénom ne peut pas être vide."
+        first_name_length: "Le prénom ne peut pas dépasser 255 caractères."
+        email_not_blank: "L'adresse e-mail ne peut pas être vide."
+        email_invalid: "Veuillez fournir une adresse e-mail valide."
+        password_not_blank: "Le mot de passe ne peut pas être vide."
+        password_min_length: "Le mot de passe doit contenir au moins 8 caractères."
+
+login:
+    title: "Connexion"
+    heading: "Heureux de vous revoir"
+    logged_in_as: "Vous êtes connecté en tant que %user%. "
+    logout: "Déconnexion"
+    email: "Email"
+    email_placeholder: "Entrez votre email"
+    password: "Mot de passe"
+    password_placeholder: "Entrez votre mot de passe"
+    submit: "Se connecter"
+    no_account: "Pas de compte ?"
+    register_here: "Inscrivez-vous ici"
+
+
+base:
+    welcome: "Bienvenue !"
+    nav:
+        home: "Accueil"
+        account: "Mon Compte"
+        cart: "Panier"
+        add_product: "Ajouter un produit"
+        connected_as: "Connecté en tant que"
+        logout: "Se déconnecter"
+        login: "Se connecter"
+        unpurchased_carts: "Paniers non achetés"
+        today_users: "Utilisateurs d'aujourd'hui"
+    footer:
+        rights: "Mon E-commerce. Tous droits réservés."
+
+
+cart:
+    title: "Mon Panier"
+    heading: "Panier d'Achat"
+    table:
+        product: "Produit"
+        quantity: "Quantité"
+        price: "Prix"
+        total: "Total"
+        actions: "Actions"
+    button:
+        remove: "Supprimer"
+        checkout: "Commander"
+    total: "Total"
+    empty: "Votre panier est vide."
+    flash:
+        not_logged_in: "Vous devez être connecté pour effectuer cette action."
+        product_added: "Produit ajouté au panier."
+        no_active_cart: "Aucun panier actif trouvé."
+        item_removed: "Article retiré du panier."
+        csrf_invalid: "Token CSRF invalide."
+        item_not_found: "Article introuvable dans votre panier."
+        checkout_success: "Votre commande a été passée avec succès."
+
+profile:
+    title: "Mon Profil"
+    heading: "Détails du Compte"
+    details: "Informations du Profil"
+    name: "Nom"
+    email: "Email"
+    edit: "Modifier le Profil"
+    orders: "Historique des Commandes"
+    order_id: "ID de Commande"
+    total: "Montant Total"
+    date: "Date"
+    actions: "Actions"
+    view_details: "Voir les Détails"
+    no_orders: "Vous n'avez aucune commande passée."
+
+    label:
+        last_name: "Nom"
+        first_name: "Prénom"
+        email: "E-mail"
+
+
+edit:
+    title: "Modifier %product%"
+    heading: "Modifier le produit"
+    save_changes: "Enregistrer les modifications"
+    back_to_product: "Retour au produit"
+show:
+    no_image: "Aucune image disponible"
+    price: "Prix:"
+    stock: "Stock:"
+    out_of_stock: "En rupture de stock"
+    category: "Catégorie:"
+    no_category: "Aucune catégorie assignée"
+    quantity: "Quantité:"
+    add_to_cart: "Ajouter au panier"
+    login_to_purchase: "Connectez-vous pour acheter"
+    unavailable: "Ce produit est actuellement indisponible."
+    edit_product: "Modifier le produit"
+    delete_product: "Supprimer le produit"
+
+
+homepage:
+    title: "Page d'accueil"
+    welcome: "Bienvenue dans la boutique en ligne"
+    filter_by_category: "Filtrer par catégorie"
+    all_categories: "Toutes les catégories"
+    products: "Produits"
+    no_image: "Aucune image disponible"
+    out_of_stock: "En rupture de stock"
+    no_products: "Aucun produit trouvé pour cette catégorie."
+    add_new_product: "Ajouter un nouveau produit"
+    sort_by: "Trier par"
+    default_sort: "Par défaut"
+    sort_price_asc: "Prix : du moins cher au plus cher"
+    sort_price_desc: "Prix : du plus cher au moins cher"
+    sort_name_asc: "Nom : de A à Z"
+    sort_name_desc: "Nom : de Z à A"
+
+
+
+product:
+    error:
+        name_not_blank: "Le nom du produit ne peut pas être vide."
+        name_length: "Le nom du produit ne doit pas dépasser 255 caractères."
+        description_not_blank: "La description ne peut pas être vide."
+        price_not_blank: "Le prix ne peut pas être vide."
+        price_positive: "Le prix doit être positif."
+        stock_not_blank: "Le stock ne peut pas être vide."
+        stock_non_negative: "Le stock ne peut pas être négatif."
+        photo_url: "La photo doit être une URL valide."
+        category_not_null: "Vous devez sélectionner une catégorie."
+
+    label:
+        name: "Nom"
+        description: "Description"
+        price: "Prix"
+        stock: "Stock"
+        photo: "URL de la photo"
+        category: "Catégorie"
+
+    flash:
+        add_success: "Produit ajouté avec succès !"
+        update_success: "Produit mis à jour avec succès !"
+        delete_success: "Produit supprimé avec succès !"
+        csrf_error: "Token CSRF invalide !"
+
+
+
+error:
+    title: "Erreur"
+    generic_heading: "Oups ! Une erreur est survenue."
+    generic_message: "Une erreur inattendue s'est produite. Veuillez réessayer plus tard."
+    go_back: "Retourner à la page d'accueil"
+
+error403:
+    title: "Accès refusé"
+    heading: "403 - Accès interdit"
+    message: "Vous n'avez pas la permission d'accéder à cette page. Veuillez retourner à la page d'accueil."
+
+error404:
+    title: "Page introuvable"
+    heading: "404 - Page introuvable"
+    message: "La page que vous recherchez n'existe pas. Vérifiez l'URL ou revenez à la page d'accueil."
+
+error500:
+    title: "Erreur du serveur"
+    heading: "500 - Erreur interne du serveur"
+    message: "Une erreur s'est produite de notre côté. Veuillez réessayer plus tard."
+
+
+today_users:
+  title: "Utilisateurs d'aujourd'hui"
+  heading: "Utilisateurs inscrits aujourd'hui"
+  table:
+    id: "ID"
+    name: "Nom"
+    email: "Email"
+    registration_date: "Date d'inscription"
+
+unpurchased_carts:
+  title: "Paniers non achetés"
+  heading: "Paniers non achetés"
+  table:
+    cart_id: "ID du panier"
+    user: "Utilisateur"
+    items: "Articles"
+
+
+flash:
+  error:
+    login_required: "Vous devez être connecté pour accéder à cette page."
+    access_denied: "Accès refusé."
+  success:
+    profile_updated: "Profil mis à jour avec succès."
+
+
+order_details:
+    title: "Détails de la commande"
+    heading: "Détails de la commande"
+    order_id: "ID de la commande"
+    purchase_date: "Date d'achat"
+    products: "Produits"
+    table:
+        product: "Produit"
+        quantity: "Quantité"
+        price: "Prix"
+        total: "Total"
+    total_amount: "Montant total"
+    back_to_account: "Retour à mon compte"

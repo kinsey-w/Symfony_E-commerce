@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block body %}
+    <h1>Edit Profile</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.nom) }}
+        {{ form_row(form.prenom) }}
+        {{ form_row(form.email) }}
+        <button class="btn btn-primary">Update</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('user_profile', { id: app.user.id }) }}" class="btn btn-secondary">Back to Profile</a>
+{% endblock %}

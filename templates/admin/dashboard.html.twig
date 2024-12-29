@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block body %}
+<h1>Admin Dashboard</h1>
+
+<h2>Manage Categories</h2>
+<a href="{{ path('category_list') }}">View Categories</a>
+
+<h2>Manage Products</h2>
+<a href="{{ path('app_product') }}">View Products</a>
+
+<h2>Pending Orders</h2>
+<p>TODO: Add list of pending orders.</p>
+{% endblock %}

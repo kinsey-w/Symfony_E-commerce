@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'today_users.title'|trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'today_users.heading'|trans }}</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{{ 'today_users.table.id'|trans }}</th>
+                <th>{{ 'today_users.table.name'|trans }}</th>
+                <th>{{ 'today_users.table.email'|trans }}</th>
+                <th>{{ 'today_users.table.registration_date'|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.nom }} {{ user.prenom }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.createdAt|date('d-m-Y H:i') }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

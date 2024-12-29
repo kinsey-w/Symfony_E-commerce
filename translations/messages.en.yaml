@@ -1,0 +1,221 @@
+register:
+    title: "Register"
+    heading: "Create an Account"
+    label:
+        nom: "Last Name"
+        prenom: "First Name"
+        email: "Email"
+        password: "Password"
+    button:
+        submit: "Register"
+    existing_account: "Already have an account?"
+    link:
+        login: "Log in here"
+    error:
+        last_name_not_blank: "Last name cannot be blank."
+        last_name_length: "Last name cannot exceed 255 characters."
+        first_name_not_blank: "First name cannot be blank."
+        first_name_length: "First name cannot exceed 255 characters."
+        email_not_blank: "Email cannot be blank."
+        email_invalid: "Please provide a valid email address."
+        password_not_blank: "Password cannot be blank."
+        password_min_length: "Password must be at least 8 characters long."
+
+login:
+    title: "Login"
+    heading: "Welcome Back"
+    logged_in_as: "You are logged in as %user%. "
+    logout: "Logout"
+    email: "Email"
+    email_placeholder: "Enter your email"
+    password: "Password"
+    password_placeholder: "Enter your password"
+    submit: "Login"
+    no_account: "Don't have an account?"
+    register_here: "Register here"
+
+base:
+    welcome: "Welcome!"
+    nav:
+        home: "Home"
+        account: "My Account"
+        cart: "Cart"
+        add_product: "Add Product"
+        connected_as: "Connected as"
+        logout: "Logout"
+        login: "Login"
+        unpurchased_carts: "Unpurchased Carts"
+        today_users: "Today's Users"
+    footer:
+        rights: "My E-commerce. All rights reserved."
+
+
+cart:
+    title: "My Cart"
+    heading: "Shopping Cart"
+    table:
+        product: "Product"
+        quantity: "Quantity"
+        price: "Price"
+        total: "Total"
+        actions: "Actions"
+    button:
+        remove: "Remove"
+        checkout: "Checkout"
+    total: "Total"
+    empty: "Your cart is empty."
+    flash:
+        not_logged_in: "You must be logged in to perform this action."
+        product_added: "Product added to cart."
+        no_active_cart: "No active cart found."
+        item_removed: "Item removed from cart."
+        csrf_invalid: "Invalid CSRF token."
+        item_not_found: "Item not found in your cart."
+        checkout_success: "Your order has been successfully placed."
+
+profile:
+    title: "My Profile"
+    heading: "Account Details"
+    details: "Profile Information"
+    name: "Name"
+    email: "Email"
+    edit: "Edit Profile"
+    orders: "Order History"
+    order_id: "Order ID"
+    total: "Total Amount"
+    date: "Date"
+    actions: "Actions"
+    view_details: "View Details"
+    no_orders: "You have no past orders."
+
+    label:
+        last_name: "Last Name"
+        first_name: "First Name"
+        email: "Email"
+
+edit:
+    title: "Edit %product%"
+    heading: "Edit Product"
+    save_changes: "Save Changes"
+    back_to_product: "Back to Product"
+show:
+    no_image: "No image available"
+    price: "Price:"
+    stock: "Stock:"
+    out_of_stock: "Out of Stock"
+    category: "Category:"
+    no_category: "No category assigned"
+    quantity: "Quantity:"
+    add_to_cart: "Add to Cart"
+    login_to_purchase: "Login to purchase"
+    unavailable: "This product is currently unavailable."
+    edit_product: "Edit Product"
+    delete_product: "Delete Product"
+
+
+homepage:
+    title: "Homepage"
+    welcome: "Welcome to the E-commerce Store"
+    filter_by_category: "Filter by Category"
+    all_categories: "All Categories"
+    products: "Products"
+    no_image: "No image available"
+    out_of_stock: "Out of Stock"
+    no_products: "No products found for this category."
+    add_new_product: "Add New Product"
+    sort_by: "Sort By"
+    default_sort: "Default"
+    sort_price_asc: "Price: Low to High"
+    sort_price_desc: "Price: High to Low"
+    sort_name_asc: "Name: A to Z"
+    sort_name_desc: "Name: Z to A"
+
+
+product:
+    error:
+        name_not_blank: "The product name cannot be empty."
+        name_length: "The product name must not exceed 255 characters."
+        description_not_blank: "The description cannot be empty."
+        price_not_blank: "The price cannot be empty."
+        price_positive: "The price must be positive."
+        stock_not_blank: "The stock cannot be empty."
+        stock_non_negative: "The stock cannot be negative."
+        photo_url: "The photo must be a valid URL."
+        category_not_null: "You must select a category."
+
+    label:
+        name: "Name"
+        description: "Description"
+        price: "Price"
+        stock: "Stock"
+        photo: "Photo URL"
+        category: "Category"
+
+    flash:
+        add_success: "Product added successfully!"
+        update_success: "Product updated successfully!"
+        delete_success: "Product deleted successfully!"
+        csrf_error: "Invalid CSRF token!"
+
+    
+error:
+    title: "Error"
+    generic_heading: "Oops! Something went wrong."
+    generic_message: "An unexpected error occurred. Please try again later."
+    go_back: "Go Back to Homepage"
+
+error403:
+    title: "Access Denied"
+    heading: "403 - Access Forbidden"
+    message: "You do not have permission to access this page. Please return to the homepage."
+
+error404:
+    title: "Page Not Found"
+    heading: "404 - Page Not Found"
+    message: "The page you are looking for does not exist. Please check the URL or return to the homepage."
+
+error500:
+    title: "Server Error"
+    heading: "500 - Internal Server Error"
+    message: "Something went wrong on our side. Please try again later."
+
+
+today_users:
+  title: "Today's Users"
+  heading: "Users Registered Today"
+  table:
+    id: "ID"
+    name: "Name"
+    email: "Email"
+    registration_date: "Registration Date"
+
+unpurchased_carts:
+  title: "Unpurchased Carts"
+  heading: "Unpurchased Carts"
+  table:
+    cart_id: "Cart ID"
+    user: "User"
+    items: "Items"
+
+
+flash:
+  error:
+    login_required: "You must be logged in to access this page."
+    access_denied: "Access denied."
+  success:
+    profile_updated: "Profile updated successfully."
+
+
+order_details:
+    title: "Order Details"
+    heading: "Order Details"
+    order_id: "Order ID"
+    purchase_date: "Purchase Date"
+    products: "Products"
+    table:
+        product: "Product"
+        quantity: "Quantity"
+        price: "Price"
+        total: "Total"
+    total_amount: "Total Amount"
+    back_to_account: "Back to My Account"

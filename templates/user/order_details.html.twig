@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'order_details.title'|trans }}{% endblock %}
+
+{% block body %}
+    <h1>{{ 'order_details.heading'|trans }}</h1>
+
+    <p><strong>{{ 'order_details.order_id'|trans }}:</strong> {{ cart.id }}</p>
+    <p><strong>{{ 'order_details.purchase_date'|trans }}:</strong> {{ cart.purchaseDate|date('d-m-Y H:i') }}</p>
+
+    <h2>{{ 'order_details.products'|trans }}</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{{ 'order_details.table.product'|trans }}</th>
+                <th>{{ 'order_details.table.quantity'|trans }}</th>
+                <th>{{ 'order_details.table.price'|trans }}</th>
+                <th>{{ 'order_details.table.total'|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart.items %}
+                <tr>
+                    <td>{{ item.product.nom }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.product.prix }} €</td>
+                    <td>{{ item.quantity * item.product.prix }} €</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <p><strong>{{ 'order_details.total_amount'|trans }}:</strong> {{ cart.getTotal() }} €</p>
+
+    <a href="{{ path('user_account') }}">{{ 'order_details.back_to_account'|trans }}</a>
+{% endblock %}

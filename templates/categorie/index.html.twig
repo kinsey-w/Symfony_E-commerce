@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categories{% endblock %}
+
+{% block body %}
+<h1>Categories</h1>
+
+{% for category in categories %}
+    <div>
+        <h3>{{ category.title }}</h3>
+        <p>{{ category.description }}</p>
+        <a href="{{ path('category_show', { id: category.id }) }}">View Products</a>
+    </div>
+{% endfor %}
+
+{# Add Category Form (admin only) #}
+{% if is_granted('ROLE_ADMIN') %}
+    <h2>Add New Category</h2>
+    {{ form(ajout_category) }}
+{% endif %}
+{% endblock %}

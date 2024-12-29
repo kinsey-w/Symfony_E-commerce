@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'cart.title'|trans }}{% endblock %}
+
+{% block body %}
+<h1>{{ 'cart.heading'|trans }}</h1>
+
+{% if cart_items|length > 0 %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>{{ 'cart.table.product'|trans }}</th>
+                <th>{{ 'cart.table.quantity'|trans }}</th>
+                <th>{{ 'cart.table.price'|trans }}</th>
+                <th>{{ 'cart.table.total'|trans }}</th>
+                <th>{{ 'cart.table.actions'|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart_items %}
+                <tr>
+                    <td>{{ item.product.nom }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.product.prix }} €</td>
+                    <td>{{ item.quantity * item.product.prix }} €</td>
+                    <td>
+                        <form method="post" action="{{ path('cart_remove', { id: item.product.id }) }}" class="no-style-form">
+                            <input type="hidden" name="_token" value="{{ csrf_token('remove' ~ item.product.id) }}">
+                            <button type="submit">{{ 'cart.button.remove'|trans }}</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <p>{{ 'cart.total'|trans }}: {{ total_price }} €</p>
+    <form method="post" action="{{ path('cart_checkout') }}" class="no-style-form">
+        <button type="submit">{{ 'cart.button.checkout'|trans }}</button>
+    </form>
+{% else %}
+    <p>{{ 'cart.empty'|trans }}</p>
+{% endif %}
+{% endblock %}
+

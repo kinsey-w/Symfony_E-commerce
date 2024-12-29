@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'edit.title'|trans({'%product%': product.nom}) }}{% endblock %}
+
+{% block body %}
+<h1>{{ 'edit.heading'|trans }}</h1>
+
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button type="submit" class="btn btn-primary">{{ 'edit.save_changes'|trans }}</button>
+{{ form_end(form) }}
+
+<a href="{{ path('product_show', { id: product.id }) }}">{{ 'edit.back_to_product'|trans }}</a>
+{% endblock %}
